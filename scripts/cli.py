@@ -25,14 +25,23 @@ def run(cache_type: CacheType):
     with ctx as openai:
         display_group = run_and_format(openai)
 
-        print(
-            Panel.fit(
-                display_group,
-                title="EXACT MATCH CACHE",
-                subtitle="Better 😢",
-                border_style="blue",
-            )
-        )
+        match (cache_type):
+            case CacheType.no_cache:
+                print(
+                    Panel.fit(
+                        display_group,
+                        title="NO CACHE",
+                        border_style="blue",
+                    )
+                )
+            case CacheType.semantic_cache:
+                print(
+                    Panel.fit(
+                        display_group,
+                        title="Semantic Cache",
+                        border_style="blue",
+                    )
+                )
 
 
 if __name__ == "__main__":

@@ -34,11 +34,9 @@ def response_text(openai_resp):
 
 def run_and_format(openai):
     questions = [
-        "what's github",
-        "what's github",
-        "can you explain what GitHub is",
-        "can you tell me more about GitHub",
-        "what is the purpose of GitHub",
+        "what's github?",
+        "can you define github?",
+        "explain github?",
     ]
 
     display_groups = []
